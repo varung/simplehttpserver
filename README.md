@@ -6,7 +6,7 @@ This replacement in go solves all of the above issues, and is very easy to insta
 # How to Use:
 
 ```
-# gets and installs the binary $GOHOME/bin
+# gets and installs the binary $GOPATH/bin
 go get github.com/varung/simplehttpserver
 # serves the current directory on PORT (8000 by default)
 simplehttpserver PORT
