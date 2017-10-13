@@ -11,8 +11,10 @@ var mut = sync.Mutex{}
 
 func main() {
 
-	// TODO: change to flag
-	var files_root string = "./"
-	fileserver := http.FileServer(http.Dir(files_root))
-	log.Fatal(http.ListenAndServe(":"+os.Args[1], fileserver))
+	fileserver := http.FileServer(http.Dir("./"))
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Add("cache-control", "no-cache")
+		fileserver.ServeHTTP(w, r)
+	})
+  log.Fatal(http.ListenAndServe(":"+os.Args[1], nil))
 }
