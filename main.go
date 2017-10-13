@@ -16,5 +16,10 @@ func main() {
 		w.Header().Add("cache-control", "no-cache")
 		fileserver.ServeHTTP(w, r)
 	})
-  log.Fatal(http.ListenAndServe(":"+os.Args[1], nil))
+
+  port := ":8000"
+  if len(os.Args) > 1 {
+    port = ":"+os.Args[1]
+  }
+  log.Fatal(http.ListenAndServe(port, nil))
 }
