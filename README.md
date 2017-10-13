@@ -6,16 +6,16 @@ This replacement in go solves all of the above issues, and is very easy to insta
 # How to Use:
 
 ```
-# gets and installs the binary $GOPATH/bin
+# gets and installs the binary
 go get github.com/varung/simplehttpserver
 # serves the current directory on PORT (8000 by default)
 simplehttpserver PORT
 ```
-(assuming $GOHOME/bin is in your $PATH)
+(this assumes $HOME/go/bin or $GOPATH/bin is in your $PATH)
 
-or if you are in this repository's directory:
+or you can do:
 
-```go run simplehttpserver.go PORT```
+```go run ~/go/src/github.com/varung/simplehttpserver/main.go PORT```
 
 
 
