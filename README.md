@@ -1,12 +1,19 @@
 # simplehttpserver
-a go version of python's simplehttpserver. when you need to serve files quickly
+I've found python -m SimpleHTTPServer PORT very useful for quickly serving files from a computer.
+However, I've noticed python's simplehttpserver sometimes crashes or hangs on serving large files.
+This is a replacement in go, which should be more performant.
 
 usage:
+
+```
 go get github.com/varung/simplehttpserver
+simplehttpserver PORT
+```
+(assuming $GOHOME/bin is in your $PATH)
 
-then run it:
-$HOME/go/bin/simplehttpserver PORT
+or if you are in this repository's directory:
 
-or:
-go run simplehttpserver.go PORT
+```go run simplehttpserver.go PORT```
+
+
 
